@@ -81,11 +81,25 @@ begin
 	-- Implement the test plan here.  Body of process is continuously from time = 0  
 	test_process : process 
 	begin
-	
-	    w_sw <= o"0"; wait for 10 ns;
-		assert w_led = "00" report "bad o0" severity failure;
-            w_sw <= o"1"; wait for 10 ns;
-            	assert w_led = "01" report "bad o1" severity failure;
+
+
+        w_sw <= "000"; wait for 10 ns;
+            assert w_led = "00" report "bad o0" severity failure;
+        w_sw <= "001"; wait for 10 ns;
+            assert w_led = "01" report "bad o1" severity failure;
+        w_sw <= "010"; wait for 10 ns;
+            assert w_led = "01" report "bad o2" severity failure;
+        w_sw <= "011"; wait for 10 ns;
+            assert w_led = "10" report "bad o3" severity failure;
+        w_sw <= "100"; wait for 10 ns;
+            assert w_led = "01" report "bad o4" severity failure;
+        w_sw <= "101"; wait for 10 ns;
+            assert w_led = "10" report "bad o5" severity failure;
+        w_sw <= "110"; wait for 10 ns;
+            assert w_led = "01" report "bad o6" severity failure;
+        w_sw <= "111"; wait for 10 ns;
+            assert w_led = "10" report "bad o7" severity failure;
+
 	    --You must fill in the remaining test cases.	
 	
 		wait; -- wait forever
