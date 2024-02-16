@@ -58,14 +58,17 @@ architecture test_bench of top_basys3_tb is
 	
   -- declare the component of your top-level design unit under test (UUT)
   component top_basys3 is
-      port(
-          -- TODO
-      );
-  end component;
+  port(
+    sw		:	in  std_logic_vector(2 downto 0);
   
- 
+  -- LEDs
+    led        :    out    std_logic_vector(1 downto 0)
+);
+  end component;
+   
 	-- declare signals needed to stimulate the UUT inputs
-	   -- TODO
+    signal w_sw : std_logic_vector(2 downto 0);
+    signal w_led: std_logic_vector(1 downto 0);
 	-- finish declaring needed signals
 begin
 	-- PORT MAPS ----------------------------------------

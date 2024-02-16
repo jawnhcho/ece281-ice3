@@ -80,6 +80,8 @@ architecture top_basys3_arch of top_basys3 is
       end component halfAdder;
       
   -- declare any signals you will need	
+  signal w_s1 : std_logic;
+  signal w_cout1, w_cout2: std_logic;
   -- make signals!
   
 begin
@@ -87,7 +89,7 @@ begin
     port map(
         i_A     => sw(0),
         i_B     => sw(1),
-        o_S     => w_S1,
+        o_S     => w_s1,
         o_Cout  => w_Cout1
     );
 
@@ -99,6 +101,6 @@ begin
         o_Cout  => w_Cout2
     );
 	-- CONCURRENT STATEMENTS --------
-	 led(1) <= w_Cout1 or w_Cout2
+	 led(1) <= w_Cout1 or w_Cout2;
 	---------------------------------
 end top_basys3_arch;
